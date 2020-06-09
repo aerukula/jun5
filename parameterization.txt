@@ -1,0 +1,76 @@
+ public void testUserProfile(){
+        driver.get("file:///C:/Users/itexps/Documents/user_profile.html");
+          if (driver.findElements(By.tagName("input")).get(5).isDisplayed()){
+             driver.findElements(By.tagName("input")).get(5).click();
+        }
+        driver.findElements(By.tagName("input")).get(1).sendKeys("abc");
+        if(driver.findElements(By.tagName("input")).get(2).isEnabled()){
+            driver.findElements(By.tagName("input")).get(2).sendKeys("xyz");
+        }
+        if(driver.findElements(By.tagName("input")).get(2).isEnabled()){
+            driver.findElements(By.tagName("input")).get(2).sendKeys("xyz");
+        }
+        if (driver.findElements(By.tagName("input")).get(5).isDisplayed()){
+             driver.findElements(By.tagName("input")).get(5).click();
+        }
+        WebElement e=driver.findElement(By.tagName("select"));
+        new Select(e).selectByIndex(2);
+        
+    }
+    @Test
+    public void testUserProfile1(){
+        driver.get("file:///C:/Users/itexps/Documents/user_profile.html");
+        driver.findElements(By.name("g")).get(0).click();
+    }
+    
+    
+    @Test
+    public void testUserProfileData() throws Exception{
+        driver.get("file:///C:/Users/itexps/Documents/user_profile.html");
+        String[] data=FileUtils.readCSVFile("c:\\qa\\userprofile.csv",2);
+        driver.findElements(By.tagName("input")).get(0).sendKeys(data[0]);
+        driver.findElements(By.tagName("input")).get(1).sendKeys(data[1]);
+        driver.findElements(By.tagName("input")).get(2).sendKeys(data[2]);
+        driver.findElements(By.tagName("input")).get(3).sendKeys(data[3]);
+        if(data[4].equalsIgnoreCase("M")){
+         if (driver.findElements(By.tagName("input")).get(4).isDisplayed()){
+             driver.findElements(By.tagName("input")).get(4).click();
+         }
+        }else{
+         if (driver.findElements(By.tagName("input")).get(5).isDisplayed()){
+             driver.findElements(By.tagName("input")).get(5).click();
+         }
+         }
+        WebElement e=driver.findElement(By.tagName("select"));
+        //new Select(e).sendKeys(data[6]);
+        e.sendKeys(data[5]);
+    }
+    
+    @Test
+    public void testScroll(){
+        driver.get("http://www.infotekguide.com");
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        //Scrolling
+        js.executeScript("window.scrollBy(0,1000)");
+        //Opening a new tab
+        js.executeScript("window.open()");
+        driver.navigate().back();
+        TakesScreenshot screen=(TakesScreenshot)driver;
+        File file=new File("c://qa//screenshot.png");
+        file=screen.getScreenshotAs(OutputType.FILE);
+    }
+    
+    
+}
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

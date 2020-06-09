@@ -1,0 +1,16 @@
+                                 JAVA
+
+1.JAVA1:
+2.JAVA2:jason,html,javascript,scanner,
+3.JAVA3:typecasting,strings,string tokens,arrays,unary,lists,map,exceptions
+4.JAVA4:
+5.JAVA5:
+6.JAVA6:
+
+                                SELENIUM
+
+1.SELENIUM1: install MAVEN
+2.SELENIUM2:
+3.SELENIUM3:
+4.SELENIUM4:
+5:SELENIUM5:
